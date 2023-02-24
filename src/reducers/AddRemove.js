@@ -7,7 +7,7 @@ const AddRemove=(state=initialstate,action)=>{
             // return state+action.payload;
         case "Remove":
             // console.log("REMove reducer callsed");
-            return state.filter((ele)=>ele.Title!=action.payload.Title);
+            return state.filter((ele)=>ele.title!=action.payload.title);
             // return state-action.payload;
         default:
             // console.log("DEfault caleld");

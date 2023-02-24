@@ -1,7 +1,7 @@
-.image-container {
+/* .image-container {
 	position: relative;
 	transition: transform 0.2s;
-  width: auto ;
+  width: 100px ;
 }
 
 .image-container:hover {
@@ -23,4 +23,113 @@
 	font-size: 20px;
 	padding: 20px;
 	text-align: center;
-}
+} */
+
+		.movie-cards {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+			grid-gap: 1rem;
+			justify-items: center;
+			align-items: start;
+			cursor: pointer;
+		  }
+		  
+		  .movie-card {
+			width: 100%;
+			max-width: 250px;
+			background-color: #ffffff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 4px;
+			overflow: hidden;
+			cursor: pointer;
+
+		  }
+		  
+		  .movie-card img {
+			width: 100%;
+			height: 250px;
+			object-fit: cover;
+		  }
+		  
+		  .movie-card h2 {
+			margin: 1rem;
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-align: center;
+		  }
+		  
+		  .movie-card p {
+			margin: 1rem;
+			font-size: 0.9rem;
+			text-align: center;
+		  }
+		  
+		  .card-container {
+			display: flex;
+			flex-wrap: wrap;
+		  }
+		  
+		  .movie-card {
+			width: calc(33.33% - 20px);
+			margin-right: 20px;
+			margin-bottom: 20px;
+			display: inline-block;
+		  }
+		  
+		  .movies-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+		  }
+		  
+		  .movie-card {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-color: white;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		  }
+		  
+		  .movie-card:hover img {
+			transform: scale(1.1);
+		  }
+		  
+		  .movie-card:hover .movie-info {
+			opacity: 0.8;
+		  }
+		  
+		  .movie-card img {
+			width: 100%;
+			height: 100%;
+			transition: all 0.3s ease-out;
+		  }
+		  
+		  .movie-info {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			padding: 10px;
+			color: white;
+			background-color: rgba(0, 0, 0, 0.6);
+			transition: all 0.3s ease-out;
+		  }
+		  
+		  .movie-buttons {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			/* display: none; */
+		  }
+		  
+		  .movie-buttons button {
+			margin-right: 10px;
+			background-color: white;
+			color: black;
+			border: none;
+			border-radius: 5px;
+			padding: 5px 10px;
+			cursor: pointer;
+		  }
+		  
