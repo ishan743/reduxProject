@@ -17,6 +17,9 @@ const Wishlist = () => {
   const sortedMoviesVoteAverage = mystate.slice().sort((a, b) => {
     return b.vote_average - a.vote_average;
   });
+  const sortedMoviesVoteAverageDec = mystate.slice().sort((a, b) => {
+    return a.vote_average-b.vote_average ;
+  });
 
 //   // Sort by release_date in descending order
   const sortedResultsDesc = mystate.slice().sort((a, b) => {
@@ -25,16 +28,15 @@ const Wishlist = () => {
   function handleCategoryChange(e) {
     let val = e.target.value;
     let newarr;
-    if(val=="increasing" ||val=="decreasing"){
-        if(val=="increasing"){
-            newarr=sortedResultsAsc;
-        }
-        else{newarr=sortedResultsDesc;}
-        // console.log(newarr);
-    }
-    else{
-        newarr = temp.filter((ele) => ele.Type == val);
-    }
+    if(val=="increasing"){newarr=sortedResultsAsc;}
+    else{newarr=sortedResultsDesc;}
+    setmystate(newarr);
+  }
+  function handleRatingChange(e) {
+    let val = e.target.value;
+    let newarr;
+    if(val=="increasing"){newarr=sortedMoviesVoteAverage;}
+    else{newarr=sortedMoviesVoteAverageDec;}
     setmystate(newarr);
   }
   return (
@@ -47,6 +49,12 @@ const Wishlist = () => {
       </select> */}
       <label>Sort by Year</label>
       <select onChange={handleCategoryChange}>
+        <option value="increasing">increasing</option>
+        <option value="decreasing">decreasing</option>
+      </select>
+      <br/>
+      <label>Sort by Rating</label>
+      <select onChange={handleRatingChange}>
         <option value="increasing">increasing</option>
         <option value="decreasing">decreasing</option>
       </select>
